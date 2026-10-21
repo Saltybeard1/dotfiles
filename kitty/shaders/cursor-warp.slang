@@ -11,14 +11,14 @@ static const float DURATION = 0.15;
 // 0 = all corners move together, 1 = max smear (leading corners jump instantly).
 static const float TRAIL_SIZE = 0.8;
 // Min distance to show trail, in units of cursor height. Customized value from README.
-static const float THRESHOLD_MIN_DISTANCE = 1.0;
+static const float THRESHOLD_MIN_DISTANCE = 3.0;
 // Blur size in pixels.
-static const float BLUR = 1.0;
+static const float BLUR = 0;
 // 1 = full cursor height, 0 = zero height, >1 gets funky.
 static const float TRAIL_THICKNESS = 1.0;
 static const float TRAIL_THICKNESS_X = 0.9;
 // Fade gradient along the trail. Customized faded-warp enables this.
-static const bool FADE_ENABLED = true;
+static const bool FADE_ENABLED = false;
 static const float FADE_EXPONENT = 5.0;
 
 static float
