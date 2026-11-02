@@ -4,36 +4,32 @@
 -- programs.lua must be loaded first (defines terminal, fileManager, menu, browser globals)
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
--- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
+-- Main
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + Backspace", hl.dsp.window.close())
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(menu))
 
--- hl.bind(mainMod .. " + M", hl.dsp.exit())
+-- Actions
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())     -- dwindle
-hl.bind(mainMod .. " + F12", hl.dsp.window.fullscreen())
+hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("~/.config/hypr/scripts/lock-suspend.sh"))
 
 -- Apps
-
-hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exec_cmd(fileManager))
+hl.bind(mainMod .. " + SHIFT + F", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + SHIFT + B", hl.dsp.exec_cmd(browser)) 
-
+hl.bind(mainMod .. " + SHIFT + V", hl.dsp.exec_cmd(coms)) 
+hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd(slicer)) 
 
 -- Screenshot
 hl.bind("END", hl.dsp.exec_cmd("hyprshot -m region --clipboard-only"))
 
--- Hy3
--- hl.bind(mainMod .. " + d", hl.dsp.layout("makegroup h"))
--- hl.bind(mainMod .. " + s", hl.dsp.layout("makegroup v"))
--- hl.bind(mainMod .. " + z", hl.dsp.layout("makegroup tab"))
 
--- Move focus with mainMod + arrow keys
-hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "left" }))
-hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
-hl.bind(mainMod .. " + up", hl.dsp.focus({ direction = "up" }))
-hl.bind(mainMod .. " + down", hl.dsp.focus({ direction = "down" }))
+-- Move Windows with Vim Motions
+hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "h" }))
+hl.bind(mainMod .. " + down", hl.dsp.focus({ direction = "j" }))
+hl.bind(mainMod .. " + up", hl.dsp.focus({ direction = "k" }))
+hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "l" }))
 
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
