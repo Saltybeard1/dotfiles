@@ -7,14 +7,19 @@ local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + Backspace", hl.dsp.window.close())
+hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(menu))
+
 -- hl.bind(mainMod .. " + M", hl.dsp.exit())
-hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())     -- dwindle
-hl.bind(mainMod .. " + F", hl.dsp.exec_cmd(browser))   -- custom
 hl.bind(mainMod .. " + F12", hl.dsp.window.fullscreen())
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("~/.config/hypr/scripts/lock-suspend.sh"))
+
+-- Apps
+
+hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exec_cmd(fileManager))
+hl.bind(mainMod .. " + SHIFT + B", hl.dsp.exec_cmd(browser)) 
+
 
 -- Screenshot
 hl.bind("END", hl.dsp.exec_cmd("hyprshot -m region --clipboard-only"))
