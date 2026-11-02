@@ -26,10 +26,10 @@ hl.bind("END", hl.dsp.exec_cmd("hyprshot -m region --clipboard-only"))
 
 
 -- Move Windows with Vim Motions
-hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "h" }))
-hl.bind(mainMod .. " + down", hl.dsp.focus({ direction = "j" }))
-hl.bind(mainMod .. " + up", hl.dsp.focus({ direction = "k" }))
-hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "l" }))
+hl.bind(mainMod .. " + H", hl.dsp.focus({ direction = "left" }))
+hl.bind(mainMod .. " + J", hl.dsp.focus({ direction = "down" }))
+hl.bind(mainMod .. " + K", hl.dsp.focus({ direction = "up" }))
+hl.bind(mainMod .. " + L", hl.dsp.focus({ direction = "right" }))
 
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
